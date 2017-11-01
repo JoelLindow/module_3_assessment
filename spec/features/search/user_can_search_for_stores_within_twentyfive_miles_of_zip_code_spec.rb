@@ -9,7 +9,7 @@ describe "user visits root page and searches by zipcode" do
     visit root_path
     # And I fill in a search box with "80202" and click "search"
     fill_in "zip", with: '80202'
-    click_on "Submit"
+    click_on "Search"
 
     # Then my current path should be "/search" (ignoring params)
     expect(current_path).to eq('/search')
