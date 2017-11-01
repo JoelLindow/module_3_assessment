@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'items#index'
+  root 'search#index'
+
+  resources :search, only: [:index, :show]
 
   resources :items,  only: [:index, :show]
   resources :orders, only: [:index, :show]
