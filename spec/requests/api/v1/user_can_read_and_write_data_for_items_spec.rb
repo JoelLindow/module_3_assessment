@@ -43,7 +43,7 @@ describe "Items API" do
 
     post 'api/v1/items', item: item_params
 
-    last_item = Item.last_item
+    last_item = Item.last
 
     expect(response).to be_success
     expect(last_item.name).to eq(item_params[:name])
