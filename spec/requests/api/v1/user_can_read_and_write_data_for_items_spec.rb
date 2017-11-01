@@ -4,7 +4,12 @@ describe "Items API" do
   it "sends a list of items" do
     create_list(:item, 3)
 
-    
+    # TEST GETTING A CONNECTION FIRST! THEN FOLLOW USER STORY!
+
+    get '/api/v1/items'
+
+    expect(response).to be_success
+
     # When I send a GET request to `/api/v1/items`
     # I receive a 200 JSON response containing all items
     # And each item has an id, name, description, and image_url but not the created_at or updated_at
