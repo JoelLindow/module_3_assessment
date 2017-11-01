@@ -1,14 +1,14 @@
 <h3>Stores within 25 miles</h3>
 <h4>17 Total Stores</h4>
-
-<% 17.times do |store| %>
+<hr>
+<% @stores.each do |store| %>
 <div class="store">
-<h5 class="name"></h5>
-<p class="city"></p>
-<p class="distance"></p>
-<p class="phone_number"></p>
-<p class="store_type"></p>
-
+  <h5 class="name"><%= store.name %></h5>
+  <p class="city"><%= store.city %></p>
+  <p class="distance"><%= store.distance %></p>
+  <p class="phone_number"><%= store.phone %></p>
+  <p class="store_type"><%= store.store_type %></p>
+  <hr>
 </div>
 
 <% end %>

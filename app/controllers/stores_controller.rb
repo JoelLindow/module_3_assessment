@@ -9,7 +9,7 @@ class StoresController < ApplicationController
     @stores = json_stores.map do |store|
       StoresService.new(store)
     end
-    binding.pry
+    # binding.pry
   end
 
 end
