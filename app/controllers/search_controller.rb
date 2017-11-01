@@ -1,10 +1,10 @@
 class SearchController < ApplicationController
 
-def index
-  # binding.pry
-  # @zip = params[:]
-# redirect_to search_path
-end
+  def index
+binding.pry
+  end
 
+  def show
+  end
 
 end

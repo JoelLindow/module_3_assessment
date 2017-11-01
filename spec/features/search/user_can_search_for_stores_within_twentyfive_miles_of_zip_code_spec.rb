@@ -8,7 +8,7 @@ describe "user visits root page and searches by zipcode" do
 
     visit root_path
     # And I fill in a search box with "80202" and click "search"
-    fill_in "search", with: '80202'
+    fill_in "zip", with: '80202'
     click_on "Submit"
 
     # Then my current path should be "/search" (ignoring params)
