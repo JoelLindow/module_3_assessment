@@ -13,17 +13,15 @@ describe "Items API" do
     expect(response).to be_success
     expect(items.count).to eq(3)
 
-    item = Item.last
+    last_item = Item.last
 
-    expect(item.name).to eq("Awesome Item")
-    expect(item.description).to eq("This is an awesome Item")
-    expect(item.image_url).to eq("http://brooklynmakers.com/wp-content/uploads/2013/01/snuggly-ugly-monster-kiki.jpg")
-    # expect(item.created_at).to eq(nil)
-    # expect(item.updated_at).to eq(nil)
+    expect(last_item.name).to eq("Awesome Item")
+    expect(last_item.description).to eq("This is an awesome Item")
+    expect(last_item.image_url).to eq("http://brooklynmakers.com/wp-content/uploads/2013/01/snuggly-ugly-monster-kiki.jpg")
+    # expect(last_item.created_at).to eq(nil)
+    # expect(last_item.updated_at).to eq(nil)
 
     #NEED TO PLUG IN SERIALIZER
-
-
   end
 
   it "can GET individual items" do
@@ -37,8 +35,23 @@ describe "Items API" do
   end
 
   it "can POST an item" do
-    # When I send a POST request to `/api/v1/items` with a name, description, and image_url
-    # I receive a 201 JSON  response if the record is successfully created
-    # And I receive a JSON response containing the id, name, description, and image_url but not the created_at or updated_at
+    item_params = {
+      name: "Best Item Ever",
+      description: "Now with less lead",
+      image_url: "http://brooklynmakers.com/wp-content/uploads/2013/01/snuggly-ugly-monster-kiki.jpg"
+    }
+
+    post 'api/v1/items', params: {item: item_params}
+
+    last_item = Item.last_item
+
+    expect(response).to be_success
+    expect(last_item.name).to eq(item_params[:name])
+    expect(last_item.description).to eq(item_params[:description])
+    expect(last_item.image_url).to eq(item_params[:image_url])
+    # expect(last_item.created_at).to eq(nil)
+    # expect(last_item.updated_at).to eq(nil)
+
+    #NEED TO PLUG IN SERIALIZER
   end
 end
