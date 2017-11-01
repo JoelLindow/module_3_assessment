@@ -53,5 +53,6 @@ describe "Items API" do
     # expect(last_item.updated_at).to eq(nil)
 
     #NEED TO PLUG IN SERIALIZER
+
   end
 end
