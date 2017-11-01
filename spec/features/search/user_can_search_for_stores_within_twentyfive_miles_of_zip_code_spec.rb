@@ -12,7 +12,7 @@ describe "user visits root page and searches by zipcode" do
     click_on "Search"
 
     # Then my current path should be "/search" (ignoring params)
-    expect(current_path).to eq('/search')
+    expect(current_path).to eq('/stores')
 
     # And I should see stores within 25 miles of 80202
     expect(page).to have_content("Stores within 25 miles")
@@ -22,14 +22,14 @@ describe "user visits root page and searches by zipcode" do
 
     # And I should see exactly 10 results (There are 17 stores within 25 miles. We want to display 10 on this page and 7 on the next.
     # Get the first page to work first from start to finish and worry about pagination later.)
-    expect(page).to have_selector('store', count: 17)
+    expect(page).to have_selector('.store', count: 17)
 
     # And I should see the long name, city, distance, phone number and store type for each of the 10 results
-    expect(page).to have_selector('name')
-    expect(page).to have_selector('city')
-    expect(page).to have_selector('distace')
-    expect(page).to have_selector('phone_number')
-    expect(page).to have_selector('store_type')
+    expect(page).to have_selector('.name')
+    expect(page).to have_selector('.city')
+    expect(page).to have_selector('.distance')
+    expect(page).to have_selector('.phone_number')
+    expect(page).to have_selector('.store_type')
 
   end
 end
