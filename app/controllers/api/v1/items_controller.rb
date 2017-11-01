@@ -13,6 +13,7 @@ module Api
       private
 
       def item_params
+        binding.pry
         params.require(:item).permit(:name, :description, :image_url)
       end
     end

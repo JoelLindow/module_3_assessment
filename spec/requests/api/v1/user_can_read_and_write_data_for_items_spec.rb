@@ -41,7 +41,7 @@ describe "Items API" do
       image_url: "http://brooklynmakers.com/wp-content/uploads/2013/01/snuggly-ugly-monster-kiki.jpg"
     }
 
-    post 'api/v1/items', params: {item: item_params}
+    post 'api/v1/items', item: item_params
 
     last_item = Item.last_item
 
